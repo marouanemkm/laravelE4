@@ -18,10 +18,16 @@ class Article extends Model
         'title',
         'subtitle',
         'content',
+        'category_id',
     ];
 
     public function dateFormated()
     {
         return date_format($this->created_at, 'd-m-Y');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

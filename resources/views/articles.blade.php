@@ -9,6 +9,7 @@
                 <div class="col-md-6">
                     <div class="card my-3">
                         <div class="card-body">
+                            <span class="badge bg-warning my-3">{{ $article->category->label }}</span>
                             <h5 class="card-title">{{$article->title}}</h5>
                             <p class="card-text">{{$article->subtitle}}</p>
                             <a href="{{route('article', $article->slug)}}" class="btn btn-primary">Voir l'article <i class="fas fa-arrow-right"></i></a>

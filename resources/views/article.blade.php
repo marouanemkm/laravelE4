@@ -6,6 +6,10 @@
         <h2 class="display-5 text-center">{{$article->title}}</h2>
         
         <h5 class="text-center my-3 pt-3">{{$article->subtitle}}</h5>
+
+        <div class="text-center">
+            <span class="badge bg-warning">{{ $article->category->label }}</span>
+        </div>
     </div>
 
     <div class="container">
