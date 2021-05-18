@@ -30,6 +30,17 @@
 
             <div class="col-12">
                 <div class="form-group">
+                    <label for="category" class="form-label mt-4">Catégorie de l'article</label>
+                    <select name="category" class="form-control" id="category">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->label }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="form-group">
                     <label for="content">Contenu</label>
                     <textarea id="tinyeditor" name="content" class="w-100 @error('content') is-invalid @enderror"></textarea>
                     @error('content')
