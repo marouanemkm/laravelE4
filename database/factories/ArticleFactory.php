@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ArticleFactory extends Factory
@@ -22,7 +23,10 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->sentence(),
+            'subtitle' => $this->faker->sentence(),
+            'content' => $this->faker->text($maxNbChars = 600),
+            'category_id' => Category::inRandomOrder()->first()->id,
         ];
     }
 }

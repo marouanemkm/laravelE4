@@ -16,17 +16,6 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Factory::create();
-        
-        for ($i = 0; $i < 26; $i++)
-        {
-            Article::create([
-                'title' => $faker->sentence(),
-                'subtitle' => $faker->sentence(),
-                'content' => $faker->text($maxNbChars = 600),
-                'category_id' => Category::inRandomOrder()->first()->id,
-            ]);
-        }
-        
+        \App\Models\Article::factory(20)->create();
     }
 }
