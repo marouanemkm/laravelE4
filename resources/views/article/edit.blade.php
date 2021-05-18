@@ -32,9 +32,9 @@
                 <div class="form-group">
                     <label for="category" class="form-label mt-4">Catégorie de l'article</label>
                     <select name="category" class="form-control" id="category">
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" {{ $category->id === $article->category->id ? 'selected' : ''}}>{{ $category->label }}</option>
-                        @endforeach
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" {{ $category->id === $article->category->id ? 'selected' : ''}}>{{ $category->label }}</option>
+                    @endforeach
                     </select>
                 </div>
             </div>
