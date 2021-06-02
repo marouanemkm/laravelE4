@@ -28,6 +28,11 @@
                         <a class="nav-link" href="{{ route('article.index') }}">Espace admin</a>
                     </li>
                 @endif
+                @if (Auth::user()->role == 'USER')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}">Bonjour {{ Auth::user()->name }}</a>
+                    </li>
+                @endif
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
